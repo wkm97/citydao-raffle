@@ -8,8 +8,8 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-const TOTAL_WINNERS = 5
-const OUTPUT_PATH = 'output.tmp.csv'
+const TOTAL_WINNERS = 125
+const OUTPUT_PATH = 'output.csv'
 
 const toValidAddress = async (candidate) => {
     if (ethers.utils.isAddress(candidate)) {
