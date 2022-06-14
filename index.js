@@ -2,7 +2,7 @@ import { parse } from 'csv-parse/sync';
 import fs from 'fs'
 import {raffle} from './utils/raffle.js';
 
-const TOTAL_WINNERS = 10; // test upload with low number
+const TOTAL_WINNERS = 125;
 const OUTPUT_PATH = 'output.csv';
 
 async function main() {
