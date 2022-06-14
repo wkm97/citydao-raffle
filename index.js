@@ -3,6 +3,7 @@ import fs from 'fs'
 import {raffle} from './utils/raffle.js';
 
 const TOTAL_WINNERS = 10; // test upload with low number
+const OUTPUT_PATH = 'output.csv';
 
 async function main() {
     const content = fs.readFileSync("./input.csv")

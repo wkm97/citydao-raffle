@@ -34,6 +34,8 @@ jobs:
         run: npm ci
       - name: Testing 🧪
         run: npm run test:integration
+      - name: Start Raffle 🎟
+        run: npm run start:raffle
       - uses: actions/upload-artifact@v3
         with:
           name: winners
