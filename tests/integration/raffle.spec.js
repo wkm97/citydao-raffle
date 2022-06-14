@@ -15,7 +15,7 @@ describe('raffle', ()=>{
         it(`valid candidates: ${run.description}`, async()=>{
             const allCandidates = [...run.candidates, ...invalidCandidates];
             const results = await raffle(allCandidates);
-            assert.equal(results.length, run.candidates.length);
+            assert.equal(results.length, run.candidates.length); // all sample will be valid
         })
     })
 

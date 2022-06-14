@@ -11,7 +11,6 @@ export const toValidAddress = async (candidate) => {
 }
 
 export const isWinner = async (address) => {
-    // console.log(isVoteExists(address))
     if (!await isVoteExists(address)) {
         return {status: false, reason: 'has not voted in a snapshot'};
     }
