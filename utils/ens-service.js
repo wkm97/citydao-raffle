@@ -9,7 +9,7 @@ const ensClient = new ApolloClient({
     cache: new InMemoryCache()
 })
 
-export const getEthAddressByEns = async (ensAddress) => {
+export const getAddressByEns = async (ensAddress) => {
     if (!ensAddress || !ensAddress.toLowerCase().includes('.eth')) {
         throw new Error('wrong ens address format');
     }

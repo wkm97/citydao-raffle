@@ -12,7 +12,7 @@ describe('raffle', ()=>{
     ];
 
     validRuns.forEach((run)=>{
-        it(`valid candidates: ${run.description}`, async()=>{
+        it(`valid case: ${run.description}`, async()=>{
             const allCandidates = [...run.candidates, ...invalidCandidates];
             const results = await raffle(allCandidates);
             assert.equal(results.length, run.candidates.length); // all sample will be valid
@@ -30,12 +30,24 @@ describe('raffle', ()=>{
         {candidates: ['0xaDB2666f2d9d7A247626925315Da9B54bB34Db7D'], description: 'without vote but with first citizen'} 
     ]
     invalidRuns.forEach((run)=>{
-        it(`invalid candidates: ${run.description}`, async()=>{
+        it(`invalid case: ${run.description}`, async()=>{
             const allCandidates = [...run.candidates];
             const results = await raffle(allCandidates);
             assert.equal(results.length, 0); // All invalid candidate, no winners
         })
     })
 
-    
+    const duplicateRuns = [
+        {candidates: ['feelslike.eth', 'feelslike.eth'], description: 'duplcated ens address'},
+        {candidates: ['0x058d968e6a424F72DF07269729f4b8065D213c70', '0x058d968e6a424F72DF07269729f4b8065D213c70'], description: 'duplicated x0 address'},
+        {candidates: ['feelslike.eth', '0xF19F62F44e61bF9913AFeAde70eeb14B78Bc6Df8', 'hellowold.www'], description: 'duplicated ens and x0 address'},
+    ];
+
+    duplicateRuns.forEach((run)=>{
+        it(`duplicate case: ${run.description}`, async()=>{
+            const allCandidates = [...run.candidates];
+            const results = await raffle(allCandidates);
+            assert.equal(results.length, 1);
+        })
+    })
 })
