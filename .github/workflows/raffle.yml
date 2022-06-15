@@ -3,7 +3,7 @@ name: CityDAO Raffle
 on:
   workflow_dispatch:
     inputs:
-      input_name:
+      input_file:
         description: 'The file name for input'
         required: true
         default: 'input.csv'
@@ -35,7 +35,7 @@ jobs:
       - name: Testing 🧪
         run: npm run test:integration
       - name: Start Raffle 🎟
-        run: npm run start:raffle
+        run: node index.js --winners 125 --input ${{ github.event.inputs.input_file}}
       - uses: actions/upload-artifact@v3
         with:
           name: winners
