@@ -40,7 +40,7 @@ describe('raffle', ()=>{
     })
 
     const duplicateRuns = [
-        {candidates: ['feelslike.eth', 'feelslike.eth'], description: 'duplcated ens address'},
+        {candidates: ['feelslike.eth', 'feelslike.eth'], description: 'duplicated ens address'},
         {candidates: ['0x058d968e6a424F72DF07269729f4b8065D213c70', '0x058d968e6a424F72DF07269729f4b8065D213c70'], description: 'duplicated x0 address'},
         {candidates: ['feelslike.eth', '0xF19F62F44e61bF9913AFeAde70eeb14B78Bc6Df8', 'hellowold.www'], description: 'duplicated ens and x0 address'},
     ];
