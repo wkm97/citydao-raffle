@@ -1,3 +1,5 @@
+// Test cases with address that might transfer the nft and break the test cases.
+
 import { raffle } from '../../utils/raffle.js';
 import assert from 'assert';
 
