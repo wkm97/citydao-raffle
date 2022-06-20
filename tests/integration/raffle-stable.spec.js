@@ -9,6 +9,10 @@ describe('raffle', ()=>{
     const validRuns = [
         // citizen
         {candidates: ['0x6bd9A24447b4a6d401749113B75B3b74e02f5132', 'favian.eth'], description: 'citizen with vote'},
+        // test address with whitespace
+        {candidates: ['   0x6bd9A24447b4a6d401749113B75B3b74e02f5132  ', '  favian.eth   '], description: 'valid address with whitespace'},
+        // test ens address with capitalized letter
+        {candidates: ['MemeBrains.eth', 'Favian.eth'], description: 'address with capitalized letter'},
     ];
 
     validRuns.forEach((run)=>{
@@ -31,7 +35,7 @@ describe('raffle', ()=>{
     })
 
     const duplicateRuns = [
-        {candidates: ['favian.eth', 'favian.eth'], description: 'duplcated ens address'},
+        {candidates: ['favian.eth', 'favian.eth'], description: 'duplicated ens address'},
         {candidates: ['0x6bd9A24447b4a6d401749113B75B3b74e02f5132', '0x6bd9A24447b4a6d401749113B75B3b74e02f5132'], description: 'duplicated x0 address'},
         {candidates: ['favian.eth', '0xafa46468De1D6f1ab77DEFAe5F7657467911182d', 'hellowold.www'], description: 'duplicated ens and x0 address'},
     ];

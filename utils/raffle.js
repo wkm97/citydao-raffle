@@ -21,7 +21,8 @@ export const isWinner = async (address) => {
 }
 
 export const buildUniqueCandidates = async (rawData) => {
-    const uniqueData = [...new Set(rawData)];
+    const sanitizedRawData = rawData.map(item=>item.toLowerCase().trim());
+    const uniqueData = [...new Set(sanitizedRawData)];
     const candidateSet = new Set();
     const ensMapper = {};
     for(const candidate of uniqueData){
